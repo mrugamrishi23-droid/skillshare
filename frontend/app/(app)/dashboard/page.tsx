@@ -58,10 +58,7 @@ export default function DashboardPage() {
       {/* Welcome */}
       <div className="flex items-start justify-between flex-wrap gap-4">
         <div>
-          <h1 className="page-title">
-            Good {new Date().getHours() < 12 ? 'morning' : new Date().getHours() < 18 ? 'afternoon' : 'evening'},{' '}
-            <span className="gradient-text">{user.full_name?.split(' ')[0] || user.username}</span> ðŸ‘‹
-          </h1>
+          <h1 className="page-title">Hello, <span className="gradient-text">{user?.full_name?.split(' ')[0] || user?.username}</span></h1>
           <p className="text-[var(--text-muted)] mt-1">Here's what's happening with your skill journey.</p>
         </div>
         <Link href="/matching" className="btn-primary flex items-center gap-2 text-sm">
@@ -249,5 +246,7 @@ export default function DashboardPage() {
     </div>
   )
 }
+
+
 
 

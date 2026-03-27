@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+﻿from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from typing import Optional
@@ -131,7 +131,7 @@ async def send_message(
         title=f"New message from {current_user.username}",
         message=data.content[:100],
         type="info",
-        link=f"/chat/{conv.id}"
+        link=f"/chat?conv={conv.id}"
     )
     db.add(notif)
     db.commit()
@@ -144,3 +144,4 @@ async def send_message(
         "sender_id": msg.sender_id,
         "created_at": msg.created_at.isoformat()
     }
+

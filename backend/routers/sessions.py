@@ -119,7 +119,7 @@ async def create_session(
         title=f"Session request from {current_user.username}",
         message=f"Wants to teach you {skill.name}",
         type="info",
-        link=f"/sessions/{session.id}"
+        link="/sessions"
     )
     db.add(notif)
     db.commit()
@@ -189,4 +189,5 @@ async def update_session(
     db.commit()
     db.refresh(session)
     return serialize_session(session)
+
 
